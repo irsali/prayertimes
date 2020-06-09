@@ -5,7 +5,8 @@ import { SharedModule } from '@irshadali/controls';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ShellComponent } from './shell/shell/shell.component';
+import { ShellComponent } from './shell/shell.component';
+import { AppServicesModule } from './services/app-service.module';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { ShellComponent } from './shell/shell/shell.component';
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    SharedModule.forRoot()
+    SharedModule.forRoot(),
+    AppServicesModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]
