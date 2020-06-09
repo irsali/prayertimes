@@ -5,11 +5,13 @@ import { SharedModule } from '@irshadali/controls';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ShellComponent } from './shell/shell/shell.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ShellComponent
   ],
   imports: [
     BrowserModule,
