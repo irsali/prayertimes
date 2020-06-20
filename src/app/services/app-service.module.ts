@@ -5,6 +5,7 @@ import { AppServices } from './app.services';
 import { IrsStoreService } from './store.service';
 import { ErrorInterceptor } from './error.interceptor';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { GeoService } from './geo.service';
 
 @NgModule({
   imports: [
@@ -20,6 +21,7 @@ export class AppServicesModule {
       providers: [
         AppServices,
         IrsStoreService,
+        GeoService,
         // {
         //   provide: HTTP_INTERCEPTORS,
         //   useClass: TokenInterceptor,

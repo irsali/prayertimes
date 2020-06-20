@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpInterceptor, HttpRequest, HttpResponse, HttpHandler, HttpEvent, HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { tap } from 'rxjs/operators';
-import { IrsNotificationService } from '@app/shared';
+import { IrsNotificationService } from '@irshadali/controls';
 import { Router } from '@angular/router';
 import { environment } from '@env/environment';
 

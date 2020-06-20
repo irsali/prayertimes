@@ -1,1 +1,49 @@
-<p>prayertime works!</p>
+<mat-card>
+  <mat-card-title>Namaz Times</mat-card-title>
+  <mat-tab-group>
+    <mat-tab label="Today">
+      <ng-template matTabContent>
+        <!--prayer times-->
+        <app-prayer-today [selectedSchool]="selectedSchool" [selectedCalcMethod]="selectedCalcMethod"
+          [midnightMode]="midnightMode" [latitudeAdjustmentMethod]="latitudeAdjustmentMethod">
+        </app-prayer-today>
+      </ng-template>
+    </mat-tab>
+    <mat-tab label="Week">
+      <ng-template matTabContent>
+        The First Content
+      </ng-template>
+    </mat-tab>
+    <mat-tab label="Date Range">
+      <ng-template matTabContent>
+        The First Content
+      </ng-template>
+    </mat-tab>
+  </mat-tab-group>
+</mat-card>
+
+
+<!--Meta data-->
+<mat-card>
+  <mat-card-title>Meta data (Defaults are selected, You might want to change as per your preference.)</mat-card-title>
+  <mat-form-field>
+    <mat-label>Schools of thought about how to compute the timings</mat-label>
+    <mat-select [(ngModel)]="selectedCalcMethod" (selectionChange)="calMethodSelectionChange($event)">
+      <mat-option *ngFor="let method of calcMethods" [value]="method.id">
+        {{method.name}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>School</mat-label>
+    <mat-select [(ngModel)]="selectedSchool" (selectionChange)="schoolSelectionChange($event)">
+      <mat-option *ngFor="let school of schools; let index = index" [value]="index">
+        {{school}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+</mat-card>
+
+{{selectedCalcMethod}}
+{{tempData | json}}

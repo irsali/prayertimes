@@ -1,7 +1,18 @@
 // @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "variables";
 @import "themes/theme";
-@import "colors";
-@import "dimensions";
+@import "utilities";
 @import "app";
 @import "components/pre-loader";
+
+// Imports functions, variables, and mixins that are needed by other Bootstrap files
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+
+// Import Roboot
+@import "~bootstrap/scss/reboot";
+@import "~bootstrap/scss/utilities"; // add utilities
+@import "~bootstrap/scss/grid"; // add the grid
+@import "reset";
 

@@ -1,0 +1,19 @@
+<div class="container-fluid row">
+  <div class="col-sm-6">
+    <mat-list *ngIf="todayPrayerTimes">
+      <mat-list-item *ngFor="let item of todayPrayerTimes" class="today-timing-list">
+        <div class="today-timing-list-item-name">{{item.name}}</div>
+        <div class="today-timing-list-item-value">{{item.value}}</div>
+      </mat-list-item>
+    </mat-list>
+  </div>
+  <!--other times-->
+  <div class="col-sm-6">
+    <mat-list *ngIf="todayOtherTimes">
+      <mat-list-item *ngFor="let item of todayOtherTimes" class="today-timing-list">
+        <div class="today-timing-list-item-name">{{item.name}}</div>
+        <div class="today-timing-list-item-value">{{item.value}}</div>
+      </mat-list-item>
+    </mat-list>
+  </div>
+</div>

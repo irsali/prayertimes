@@ -1,0 +1,9 @@
+@mixin generate-utilites($theme) {
+  $primary: map-get($theme , primary  );
+  $accent: map-get($map: $theme, $key: accent );
+
+  .app-alert{
+    color: mat-color($primary, 600)
+  }
+
+}
