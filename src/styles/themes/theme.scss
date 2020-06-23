@@ -10,7 +10,7 @@
 // (imported above). For each palette, you can optionally specify a default, lighter, and darker
 // hue. Available color palettes: https://material.io/design/color/
 $irs-app-primary: mat-palette($mat-blue);
-$irs-app-accent:  mat-palette($mat-green);
+$irs-app-accent:  mat-palette($mat-cyan);
 
 // The warn palette is optional (defaults to red).
 $irs-app-warn:    mat-palette($mat-red);

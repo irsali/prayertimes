@@ -17,6 +17,14 @@ export class PrayerTimeService {
     return this.http.get(`timings/${timestamp}?latitude=${latitude}&longitude=${longitude}&method=${method}`);
   }
 
+  // Get prayers times of particular day
+  public getPrayerTimes(
+    timestamp: number, latitude: number, longitude: number, method: number, school: number = 3,
+    midnightMode: number = 0, latitudeAdjustmentMethod: number = 0
+  ) {
+    return this.http.get(`timings/${timestamp}?latitude=${latitude}&longitude=${longitude}&method=${method}`);
+  }
+
   public getThisMonthPrayerTimes(lat: number, lng: number) {
     const timestamp = new Date().getTime() / 1000;
     return this.http.get(`${timestamp}?latitude=${lat}&longitude=${lng}`);

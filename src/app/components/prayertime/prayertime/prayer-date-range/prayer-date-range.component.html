@@ -1,1 +1,48 @@
-<p>prayer-date-range works!</p>
+<mat-drawer-container autosize [hasBackdrop]="false">
+  <!-- Settings -->
+  <div>
+    <button type="button" class="floating-btn" mat-mini-fab (click)="columnOptionDrawer.toggle()">
+      <mat-icon>settings</mat-icon>
+    </button>
+    <mat-drawer #columnOptionDrawer position="end" mode="push" class="columnOptionDrawer">
+      <mat-card-title>Settings</mat-card-title>
+      <mat-form-field>
+        <mat-label>Start Date</mat-label>
+        <input matInput [(ngModel)]="startDate" (change)="refresh()" [matDatepicker]="picker">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Number of days</mat-label>
+        <input type="number" matInput [(ngModel)]="numberOfDays" (change)="refresh()" max="365">
+      </mat-form-field>
+      <div *ngFor="let column of columns">
+        <mat-checkbox [(ngModel)]="column.isDisplay" (change)="checkboxChange()">{{column.name}}</mat-checkbox>
+      </div>
+    </mat-drawer>
+
+    <!-- <button printSectionId="print-section" [useExistingCss]="true" ngxPrint mat-button type="button">
+      Print
+    </button> -->
+  </div>
+  <!-- Prayer table -->
+  <table id="print-section" *ngIf="columnsToDisplay" #prayerTable mat-table [dataSource]="dayPrayers"
+    class="mat-elevation-z8">
+    <ng-container matColumnDef="Fajr">
+      <th mat-header-cell *matHeaderCellDef> Fajr </th>
+      <td mat-cell *matCellDef="let element"> {{element.Fajr}} </td>
+    </ng-container>
+    <ng-container matColumnDef="Dhuhr">
+      <th mat-header-cell *matHeaderCellDef> Dhuhr </th>
+      <td mat-cell *matCellDef="let element"> {{element.Dhuhr}} </td>
+    </ng-container>
+    <mat-text-column name="Asr"></mat-text-column>
+    <mat-text-column name="Maghrib"></mat-text-column>
+    <mat-text-column name="Isha"></mat-text-column>
+    <mat-text-column name="Sunrise"></mat-text-column>
+    <mat-text-column name="Sunset"></mat-text-column>
+    <mat-text-column name="Imsak"></mat-text-column>
+    <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+    <tr mat-row *matRowDef="let row; columns: columnsToDisplay"></tr>
+  </table>
+</mat-drawer-container>

@@ -15,10 +15,12 @@ export class PrayerTimeComponent implements OnInit {
   latitudeAdjustmentMethod: number;
   selectedSchool: number;
   schools: string[];
+  tabSelectedIndex: number;
 
   constructor(private appServices: AppServices, private prayerTimeService: PrayerTimeService) { }
 
   async ngOnInit() {
+    this.tabSelectedIndex = 2;
     this.calcMethods = this.appServices.getCalcMethods();
     this.schools = this.appServices.getSchools();
 

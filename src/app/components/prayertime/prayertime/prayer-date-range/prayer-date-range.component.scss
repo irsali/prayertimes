@@ -1,0 +1,14 @@
+.columnOptionDrawer {
+  padding-left: 10px;
+  padding-top: 5px;
+  mat-checkbox {
+    display: block;
+    padding-top: 5px;
+  }
+}
+
+.floating-btn{
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
